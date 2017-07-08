@@ -15,6 +15,7 @@
 	echo "connected successfully!";
 	}
 	
+<<<<<<< HEAD
 	$sql  = "SELECT *  FROM CHILDREN";
 	$result = $conn->query($sql);
 	//echo $result->fetch_assoc();
@@ -24,6 +25,8 @@
         echo "id: " . $row["ID"]. "Name: " . $row["CName"]. " " . $row["Present"];
 	}
 	}
+=======
+>>>>>>> 8ed83cfe7dfa7da1a1808db96e5a0f413794ca75
 ?>
 
 <head> Online attendance<br><br> </head>
@@ -34,7 +37,11 @@
 	<tr><th>ID</th><th>Child Name </th><th>Present/Absent</th></tr>
 	<?php
 	echo "<form action = 'a.php' method = 'post'>";
+<<<<<<< HEAD
 	$sql  = "SELECT *  FROM CHILDREN";
+=======
+	$sql  = "SELECT * FROM CHILDREN";
+>>>>>>> 8ed83cfe7dfa7da1a1808db96e5a0f413794ca75
 	$result = $conn->query($sql);
 	if ($result->num_rows > 0) {
     // output data of each row
@@ -43,6 +50,7 @@
 	}
 	echo "</table>";
 	}	
+<<<<<<< HEAD
 	
 	echo "<input type = 'submit' name = 'submit' value = 'submit'/></form>";
 	
@@ -56,5 +64,11 @@
 
 
 
+=======
+	echo "<input type = 'hidden' value = $result->num_rows name = 'count'>";
+	echo "<input type = 'submit' name = 'submit' value = 'submit'/></form>";
+	
+	?>
+>>>>>>> 8ed83cfe7dfa7da1a1808db96e5a0f413794ca75
 
 </body>
