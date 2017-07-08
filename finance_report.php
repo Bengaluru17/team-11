@@ -38,8 +38,8 @@ $p->data = array($exp);
 $p->chart_type = "line";
 
 // Common Options
-$p->title = "Income and Expenditure per student";
-$p->ylabel = "Rupees/Person";
+$p->title = "Finance Report";
+$p->ylabel = "Rupees";
 $p->series_label = array("time");
 
 $p->options["axes"]["yaxis"]["tickOptions"]["prefix"] = 'Rs';
@@ -58,10 +58,24 @@ $out = $p->render('c1');
 			<?php echo $out; ?>
 		</div>
 		<div>
+		<table border=1>
+			<tr><th>Date</th><th>Expenditure</th><th>Income</th><th>Number Of Students</th><th>Budget</th></tr>
 			<?php
-				echo "test";
+				$sql  = "SELECT * FROM chart";
+				$result = $conn->query($sql);
+				if ($result->num_rows > 0) {
+    				// output data of each row
+					$row = $result->fetch_assoc();
+					$prevBudget = $row['budget'];
+					echo "<tr><td>".$row['date']."</td><td>".$row['expenditure']."</td><td>".$row['income']."</td><td>".$row['no_of_students']."</td><td>".$prevBudget."</td></tr>";
+    					while($row = $result->fetch_assoc()){	
+						$prevBudget+=$row['income']-$row['expenditure'];
+						echo "<tr><td>".$row['date']."</td><td>".$row['expenditure']."</td><td>".$row['income']."</td><td>".$row['no_of_students']."</td><td>".$prevBudget."</td></tr>";
+					}
+					
+					echo "</table>";
+				}
 			?>
 		</div>
 	</body>
 </html>
-`
