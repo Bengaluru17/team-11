@@ -25,21 +25,21 @@ if($conn->connect_error){
 	echo "connected successfully!";
 }
 	
-$sql  = "SELECT *  FROM CHART";
+$sql  = "SELECT *  FROM chart";
 
 $result = $conn->query($sql);
 //echo $result->fetch_assoc();
 if ($result->num_rows > 0) {
     // output data of each row
     $i = 0;
-    while($row === $result->fetch_assoc()) {
+    while($row = $result->fetch_assoc()) {
        	$exp[$i] = array($row["date"],$row["expenditute"]/$row["no_of_students"]);
 	$inc[$i] = array($row["date"],$row["income"]/$row["no_of_students"]);
-	echo $exp[$i];
-	echo $inc[$i];
-} else {
+	$i++;
+
+} 
+}else {
 	echo "No data";
-}
 }
 
 $p->data = array($exp,$inc);
@@ -48,10 +48,10 @@ $p->chart_type = "line";
 
 // Common Options
 $p->title = "Income and Expenditure per student";
-$p->ylabel = "Rupees";
+$p->ylabel = "Rupees/Person";
 $p->series_label = array("time");
 
-$p->options["axes"]["yaxis"]["tickOptions"]["prefix"] = '$';
+$p->options["axes"]["yaxis"]["tickOptions"]["prefix"] = 'Rs';
 
 $out = $p->render('c1');
 ?>
