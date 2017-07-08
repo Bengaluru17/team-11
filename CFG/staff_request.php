@@ -1,16 +1,16 @@
 <?php
     // Connect to mysql
     include("conec.php");
-	require_once 'vendor/autoload.php'; // Loads the library 
+	//require_once 'vendor/autoload.php'; // Loads the library 
  
-	use Twilio\Rest\Client; 
+	//use Twilio\Rest\Client; 
 	if($_SERVER["REQUEST_METHOD"] == "POST") {
 		$item_name = mysqli_real_escape_string($dbh, $_POST['item_name']);
 		$quantity = mysqli_real_escape_string($dbh, $_POST['quantity']);
 		$price = mysqli_real_escape_string($dbh, $_POST['price']);
 		$description = mysqli_real_escape_string($dbh, $_POST['description']);
 		// Prepare the SQL statement
-		$SQL = "INSERT INTO team11.item (item_name, price, quantity, description, approved) VALUES ('$item_name', '$price', '$quantity', '$description', 0)";
+		$SQL = "INSERT INTO team11.item (item_name, price, quantity, description, approved, done) VALUES ('$item_name', '$price', '$quantity', '$description', 0, 0)";
 	
 		// Execute SQL statement
 		mysqli_query($dbh, $SQL);//$dbh is the connection command variable from 'conec.php'
@@ -18,7 +18,7 @@
 	
 	
 	
-		$account_sid = 'AC7bd25c9d2fd6296c5a57cb248816f381'; 
+		/*$account_sid = 'AC7bd25c9d2fd6296c5a57cb248816f381'; 
 		$auth_token = '6e7bbf51d493862277ca6772056feaf8'; 
 		$client = new Client($account_sid, $auth_token); 
 		
@@ -26,7 +26,7 @@
 		->messages->create("+919740284516", array( 
 				'From' => "+15109451364",  
 				'Body' => "items: $item_name\n quantity: $quantity \n price per piece: $price \n description; $description",      
-		));
+		));*/
 	}
 ?>
 <html>
