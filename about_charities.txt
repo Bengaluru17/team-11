@@ -1,0 +1,15 @@
+first charity(about orphand childrens;"reaching hands"): paper copies of inventory,every thing hand written
+Need: app for managing the inventory, electorynic attendance system,online account system, online inventory and record system, better communicatioin system in offices
+basically make everything online with database connectivity
+
+Second charity(reintegratewomen girls victims of trafficing and prostitution;"kshamata"):
+Womens: Illetrate, severe trauma,, loss of self esteem
+charity: psychological care, life skills training, training for livelihood,creating commnity support,placement
+Need by charity: Tracking of women when they come to offices(current sstem its manual),women live in different locations, data collection and  updating for women who live far,
+Data to be collected: training(progress and sector),data on kshamata actions( track of them, where they staying,)
+features: fill fors with ability to develop new forms, geographical location tracking, upload photos and videos, usable on tablets and phones, ability ot store offline and upload automatically when connected, report generation based on dynamic needs
+
+Third charity("amogh" --> precious)(sukpport to differently abled students like autism ADHD):
+skills of kids there: data entry training,transcanding scripts, uploading, scanning , slide making of data
+need: no softwares available for data entry for differently abled students, data in form format for simple data entry, mock applications,
+different form input fields to identify and practice filling forms 
