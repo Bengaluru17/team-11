@@ -21,6 +21,7 @@
 				echo $row['price'];
 				echo $row['description'];
 				echo "<input type=\"button\" value=\"Approve\" onclick=\"location='approve.php?item_id=".$row['item_id']."'\"/></br>";
+				echo "<input type=\"button\" value=\"Deny\" onclick=\"location='deny.php?item_id=".$row['item_id']."'\"/></br>";
 			}
 		}
 	?>
